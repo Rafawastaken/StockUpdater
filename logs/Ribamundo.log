@@ -1,0 +1,7 @@
+2025-06-10 00:56:00 [ERROR] Ribamundo: Falha no download: 401 Client Error: Unauthorized for url: https://PT509043267:gUz4TksgB@pricelist.ribamundotecnologia.es/pricelist/pricelist.csv
+Traceback (most recent call last):
+  File "D:\Programacao\Kontrolsat\StockUpdater\suppliers\Ribamundo.py", line 13, in download
+    resp.raise_for_status()
+  File "C:\Users\usuario\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://PT509043267:gUz4TksgB@pricelist.ribamundotecnologia.es/pricelist/pricelist.csv
