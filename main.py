@@ -6,8 +6,8 @@ if __name__ == "__main__":
     logger = Logger.setup()
 
     ## ALSO =====================================================
-    logger.info("Corrigir stock Also")
-    AlsoRoutine(logger)
+    # logger.info("Corrigir stock Also")
+    # AlsoRoutine(logger)
 
     ## DEPAU ====================================================
     logger.info("Corrigir stock Depau")

@@ -66,7 +66,7 @@ class Experteletro:
                 "stock": stock,
                 "price": row['preco'],
                 "name": name,
-                "ean13": str(row['ean']).replace(".0", "")
+                "ean13": str(row['ean']).replace(".0", "").zfill(13)
             }
 
             Experteletro.local_logger.debug("\tProduto normalizado: %r", product)

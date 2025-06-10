@@ -39,7 +39,7 @@ class Prome:
         products = raw_response.get("Produtos")
 
         for p in products:
-            ean = str(p.get("EAN")).replace(".0", "")
+            ean = str(p.get("EAN")).replace(".0", "").zfill(13)
             stock = p.get("Stock")
             name = p.get('Nome')
             raw_price = p.get("Preco")  # pode vir str, float ou None

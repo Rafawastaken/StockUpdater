@@ -76,7 +76,7 @@ class Elektro:
                     data = resp.json()
                     prods = [
                         {
-                            "ean13": str(p.get("ean13")).replace(".0", ""),
+                            "ean13": str(p.get("ean13")).replace(".0", "").zfill(13),
                             "name": p.get("nombre"),
                             "stock": p.get("stock") or p.get("quantity"),
                             "price": p.get("precio") or p.get("price"),

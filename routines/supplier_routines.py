@@ -13,7 +13,6 @@ def ElektroRoutine(logger) -> bool:
     try:
         SUPPLIER_ID = 11
         SUPPLIER_NAME = "Elektro"
-
         elektro_patife_products = Patife.get_current_stocks(supplier_id=SUPPLIER_ID, supplier_name=SUPPLIER_NAME)
         access_token = Elektro.authenticate()
         elektro_formatted_products = Elektro.get_normalize_products(access_token)
@@ -64,9 +63,9 @@ def DepauRoutine(logger) -> bool:
     try:
         SUPPLIER_ID = 9
         SUPPLIER_NAME = "Depau"
-        depau_patife_products = Patife.get_current_stocks(supplier_id=SUPPLIER_ID, supplier_name=SUPPLIER_NAME)
         depau_raw_response = Depau.download_file()
         depau_formatted_data = Depau.normalize_file(raw_content = depau_raw_response)
+        depau_patife_products = Patife.get_current_stocks(supplier_id=SUPPLIER_ID, supplier_name=SUPPLIER_NAME)
         depau_corrected_stock_data = file_parser(patife_data=depau_patife_products, supplier_data=depau_formatted_data, supplier_name=SUPPLIER_NAME)
         Patife.update_stock(SUPPLIER_ID, SUPPLIER_NAME, depau_corrected_stock_data)
         logger.info("Depau atualizada com sucesso")

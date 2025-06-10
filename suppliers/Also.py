@@ -83,7 +83,7 @@ class Also:
         formatted = []
         for _, row in df.iterrows():
             stock_val = str(row["AvailableQuantity"]).strip().replace(".0", "")
-            ean13 = str(row["EuropeanArticleNumber"]).replace(".0", "").strip()
+            ean13 = str(row["EuropeanArticleNumber"]).replace(".0", "").strip().zfill(13)
 
             if not stock_val:
                 Also.local_logger.error(f"Erro ao encontrar stock para produto: {ean13}")

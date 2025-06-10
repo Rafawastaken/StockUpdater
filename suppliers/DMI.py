@@ -58,7 +58,7 @@ class DMI:
                 "stock": stock,
                 "price": row['COMPRA'],
                 "name": name,
-                "ean13": str(row['EAN']).replace(".0", "")
+                "ean13": str(row['EAN']).replace(".0", "").zfill(13)
             }
             DMI.local_logger.debug("\tProduto normalizado: %r", product)
             formatted_data.append(product)

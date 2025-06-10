@@ -64,7 +64,7 @@ class Orima:
                 "stock": stock_val,
                 "price": row["wholesale_price"],
                 "name": name,
-                "ean13": row["ean13"],
+                "ean13": row["ean13"].zfill(13),
             }
 
             print(f"[*] Orima formatar: {name}")

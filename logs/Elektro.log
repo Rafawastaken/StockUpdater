@@ -1504,3 +1504,8 @@
 2025-06-10 00:27:54 [INFO] Elektro: Sucesso 8425998023015: stock 1000 -> 1000, price 0.06 -> 0.10, status=201
 2025-06-10 00:27:54 [DEBUG] Elektro: POST http://patife.kontrolsat.com/api/update-product-supplier/11/8425998007558 params={'key': 'SRNEJZFZ7HK5P2E1UQ7DLPKBFVAXCWP2'} headers={'User-Agent': 'Servidor-Local-Stock-Updater'} payload={'stock': 0, 'price': 0.6000000000000001}
 2025-06-10 00:27:54 [INFO] Elektro: Sucesso 8425998007558: stock 0 -> 0, price 0.57 -> 0.60, status=201
+2025-06-10 14:20:02 [INFO] Elektro: Procurar stocks do supplier 11
+2025-06-10 14:20:02 [DEBUG] Elektro: GET http://patife.kontrolsat.com/api/products-supplier/11 params={'key': 'SRNEJZFZ7HK5P2E1UQ7DLPKBFVAXCWP2'} headers={'User-Agent': 'Servidor-Local-Stock-Updater'}
+2025-06-10 14:20:51 [INFO] Elektro: Recuperados 29840 produtos do supplier 11
+2025-06-10 14:20:51 [INFO] Elektro: Autenticar em Elektro3
+2025-06-10 14:20:56 [INFO] Elektro: total_pages=440 | items_per_page=50

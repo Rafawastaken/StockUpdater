@@ -45,21 +45,25 @@ class Depau:
 
         csv_buffer = StringIO(raw_content)
         df = pd.read_csv(csv_buffer, sep=';', skipinitialspace=True, index_col=False)
+        df.to_csv("./downloads/depau.csv", index=False)
 
         formatted_data = []
         total_rows = len(df)
 
         for idx, row in df.iterrows():
             name = row["Nombre"]
+            ean = row['EAN13']
             print(f"[*] Formatar ({idx+1}/{total_rows}): {name}")
             Depau.local_logger.debug("Formatar idx=%d | %s", idx, name)
+
+            ean = str(row['EAN13']).zfill(13)
 
             stock = str(row['Cantidad'])
             product = {
                 "stock": stock,
                 "price": row['PVD (Sin IVA) con Canon'],
                 "name": row['Nombre'],
-                "ean13": row['EAN13']
+                "ean13": ean
             }
             Depau.local_logger.debug("\tProduto normalizado: %r", product)
             formatted_data.append(product)
